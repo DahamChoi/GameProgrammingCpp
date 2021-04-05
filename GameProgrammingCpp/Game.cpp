@@ -1,14 +1,14 @@
 #include "Game.h"
 #include <SDL.h>
 
-Game::Game()
+AGame::AGame()
 {
     IsRunning = true;
     Window = nullptr;
     Renderer = nullptr;
 }
 
-bool Game::Initialize()
+bool AGame::Initialize()
 {
     int sdlResult = SDL_Init(SDL_INIT_VIDEO);
     if (sdlResult != 0)
@@ -45,7 +45,7 @@ bool Game::Initialize()
     return true;
 }
 
-void Game::RunLoop()
+void AGame::RunLoop()
 {
     while (IsRunning)
     {
@@ -55,14 +55,14 @@ void Game::RunLoop()
     }
 }
 
-void Game::Shutdown()
+void AGame::Shutdown()
 {
     SDL_DestroyWindow(Window);
     SDL_DestroyRenderer(Renderer);
     SDL_Quit();
 }
 
-void Game::ProcessInput()
+void AGame::ProcessInput()
 {
     SDL_Event event;
     while (SDL_PollEvent(&event))
@@ -92,7 +92,7 @@ void Game::ProcessInput()
     }
 }
 
-void Game::UpdateGame()
+void AGame::UpdateGame()
 {
     while (!SDL_TICKS_PASSED(SDL_GetTicks(), TicksCount + 16))
         ;
@@ -142,7 +142,7 @@ void Game::UpdateGame()
     }
 }
 
-void Game::GenerateOutput()
+void AGame::GenerateOutput()
 {
     // Buffer Clear
     SDL_SetRenderDrawColor(Renderer, 0, 0, 255, 255);

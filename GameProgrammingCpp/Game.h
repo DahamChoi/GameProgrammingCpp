@@ -2,10 +2,10 @@
 
 #include "Vector2.h"
 
-class Game
+class AGame
 {
 public:
-	Game();
+	AGame();
 
 	bool Initialize();
 	void RunLoop();
@@ -31,4 +31,3 @@ private:
 	const static int Thickness{ 15 };
 	const static int PaddleHeight{ 75 };
 };
-

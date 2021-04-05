@@ -2,7 +2,7 @@
 
 int main()
 {
-	Game game;
+	AGame game;
 	bool success = game.Initialize();
 	if (success)
 	{
